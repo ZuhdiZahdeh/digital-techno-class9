@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لماذا الطاقة البديلة؟</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            direction: rtl; /* Set text direction to right-to-left */
+            text-align: right; /* Align text to the right */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #1e40af;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .popup-overlay.show .popup-content {
+            transform: scale(1);
+        }
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #e5e7eb;
+            color: #4b5563;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .close-btn:hover {
+            background-color: #d1d5db;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        ul {
+            list-style-type: disc;
+            margin-right: 1.5rem;
+            padding-right: 0.5rem;
+            color: #4b5563;
+        }
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        .icon {
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- This button would be part of your main lesson content -->
+    <button id="openPopupBtn" class="btn-primary">
+        أسباب البحث عن بدائل
+    </button>
+
+    <!-- The Pop-up Overlay -->
+    <div id="popupOverlay" class="popup-overlay">
+        <div class="popup-content relative">
+            <button id="closePopupBtn" class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div class="p-6">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">
+                    لماذا نحتاج بدائل للوقود الأحفوري؟
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    لم يعد الوقود الأحفوري (مثل النفط والفحم) خيارنا الوحيد للطاقة، بل أصبح من الضروري البحث عن بدائل. السبب بسيط: هذه المصادر محدودة، وتأثيراتها على بيئتنا وصحتنا خطيرة.
+                </p>
+
+                <h3 class="text-xl font-semibold text-blue-600 border-b border-gray-300 pb-2 mb-4">
+                    الأسباب الرئيسية للتحول
+                </h3>
+                
+                <!-- Reason 1: Environmental Impact -->
+                <div class="mb-6">
+                    <h4 class="flex items-center text-lg font-bold text-gray-800">
+                        <span class="icon text-2xl">🌎</span>
+                        1. حماية كوكب الأرض
+                    </h4>
+                    <p class="mt-2 text-gray-700">
+                        يُعد حرق الوقود الأحفوري المصدر الرئيسي لانبعاثات غاز **ثاني أكسيد الكربون (CO2)**، الذي يسبب ظاهرة الاحتباس الحراري وارتفاع درجة حرارة الكوكب. هذا يؤدي إلى **ذوبان الجليد، وارتفاع منسوب البحر،** بالإضافة إلى زيادة **الظواهر الجوية المتطرفة** مثل الفيضانات والجفاف.
+                    </p>
+                    <p class="mt-2 text-gray-700">
+                        كما ينتج عنه ملوثات تسبب **أمراضًا في الجهاز التنفسي والقلب**، وتؤدي إلى **"الأمطار الحمضية"** التي تضر بالغابات.
+                    </p>
+                </div>
+
+                <!-- Reason 2: Limited Resources -->
+                <div class="mb-6">
+                    <h4 class="flex items-center text-lg font-bold text-gray-800">
+                        <span class="icon text-2xl">⏳</span>
+                        2. مورد محدود وسينفد
+                    </h4>
+                    <p class="mt-2 text-gray-700">
+                        الوقود الأحفوري هو **مورد غير متجدد** استغرق تكوينه ملايين السنين، بينما نستهلكه بمعدل سريع. هذا يهدد أمن الطاقة العالمي ويجعلنا تحت رحمة أسواق النفط المتقلبة. التحول إلى مصادر متجددة مثل الشمس والرياح يضمن لنا استقلالية أكبر.
+                    </p>
+                </div>
+
+                <!-- Reason 3: Economic and Technological Benefits -->
+                <div>
+                    <h4 class="flex items-center text-lg font-bold text-gray-800">
+                        <span class="icon text-2xl">⚙️</span>
+                        3. فرصة اقتصادية وتكنولوجية
+                    </h4>
+                    <p class="mt-2 text-gray-700">
+                        تطورت **تقنيات الطاقة المتجددة** وأصبحت أرخص وأكثر كفاءة، مما يجعلها منافسة قوية للوقود الأحفوري. هذا التحول يخلق **وظائف جديدة** ويعزز النمو الاقتصادي، مما يساهم في بناء مستقبل مستدام.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('openPopupBtn').addEventListener('click', function() {
+            document.getElementById('popupOverlay').classList.add('show');
+        });
+
+        document.getElementById('closePopupBtn').addEventListener('click', function() {
+            document.getElementById('popupOverlay').classList.remove('show');
+        });
+
+        document.getElementById('popupOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.classList.remove('show');
+            }
+        });
+    </script>
+
+</body>
+</html>
